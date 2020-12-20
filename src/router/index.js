@@ -52,26 +52,21 @@ export const constantRouterMap = [
       {
         path: 'list',
         name: 'TeacherList',
-        component: () => import('@/views/teacher/list'),
+        component: () => import('@/views/teacher/list'), // @表示当前项目的src目录
         meta: { title: '讲师列表', icon: 'eye' }
       },
       {
         path: 'save',
         name: 'SaveTeacher',
         component: () => import('@/views/teacher/form'),
-        meta: { title: '添加讲师', icon: 'user' }
+        meta: { title: '添加讲师', icon: 'link' }
       },
       {
-        path: 'update',
+        path: 'update/:id', // 访问update路由路径：、teacher/update/1 那么就会被当前配置匹配，然后使用id接收1参数
         name: 'UpdateTeacher',
-        component: () => import('@/views/teacher/list'),
+        hidden: true, // 和新增使用同一个页面，不需要显示在页面中
+        component: () => import('@/views/teacher/form'),
         meta: { title: '更新讲师', icon: 'link' }
-      },
-      {
-        path: 'delete',
-        name: 'DeleteTeacher',
-        component: () => import('@/views/teacher/list'),
-        meta: { title: '删除讲师', icon: 'nested' }
       }]
   },
 

@@ -14,7 +14,7 @@ import router from './router'
 import store from './store'
 
 import '@/icons' // icon
-import '@/permission' // permission control
+import '@/permission' // permission control 用来做前端验证代码
 
 Vue.use(ElementUI, { locale })
 
@@ -22,7 +22,7 @@ Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
-  router,
+  router, // 根据路由去渲染App.vue
   store,
-  render: h => h(App)
+  render: h => h(App) // 把渲染好的App.vue再设置给index.js中id=app的标签中
 })
